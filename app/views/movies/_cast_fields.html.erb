@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <%= f.hidden_field :_destroy %>
+  <div>
+    <%= f.label :Name%> <%= f.text_field :name%><br><br>
+    <%= f.label :mobile_number%> <%= f.text_field :mobile_number%><br><br>
+    <%= f.label :experience%> <%= f.text_field :experience%><br><br>
+    <%= f.label :number_of_movies%> <%= f.text_field :number_of_movies%><br><br>
+    <%= f.file_field :profile_image, accept: 'image/png, image/gif, image/jpeg, image/jpg'%>
+    <br><br>
+  <div>
+    <%= link_to "Remove", '#', class: "remove_fields" %>
+  </div>
+</div>

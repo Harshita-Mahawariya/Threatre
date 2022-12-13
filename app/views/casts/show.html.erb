@@ -1,0 +1,13 @@
+<br><br>
+<p><h1><%=@cast.name%></h1><%= link_to 'Edit',edit_cast_path(@cast) %></p>
+<% if @cast == nil%>
+	No cast found<br>
+<%else%>
+	<% if @cast.profile_image.present? %>
+    <%= image_tag @cast.profile_image, :size => "200x200" %>
+  <%end%><br><br>
+	Name : <%= @cast.name%><br><br>
+	Mobile : <%= @cast.mobile_number%><br><br>
+	Experience: <%= @cast.experience%><br><br>
+	Number of movies: <%= @cast.number_of_movies%><br><br>
+<%end%>

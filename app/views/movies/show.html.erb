@@ -1,0 +1,16 @@
+<p><h1><%=@movie.name%></h1><%= link_to 'Edit',edit_movie_path(@movie) %></p>
+<% if @movie.poster.present? %>
+    <%= image_tag @movie.poster, :size => "200x200" %>
+<%end%><br><br>
+Budget : <%= @movie.budget%>cr<br>
+Duration : <%= @movie.duration%><br>
+Production Company : <%= @p.name%><br>
+<h3>Cast </h3>
+<% if @movie.movies_with_casts.present?%>
+  <% @movie.movies_with_casts.each do |m| %>
+    Name : <%= m.cast.name%><br>
+    Mobile Number : <%= m.cast.mobile_number%><br>
+    Experience : <%= m.cast.experience%><br>
+    Number of Movies : <%= m.cast.number_of_movies %><br><br>
+  <%end%>
+<%end%>

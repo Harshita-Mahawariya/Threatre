@@ -1,0 +1,17 @@
+<br><br>
+<h1>Cast</h1>
+<%= form_with model: @cast ,method: :post do |form| %>
+	<div>
+	  <%= form.label :Name%> <%= form.text_field :name%><br><br>
+	  <%= form.label :mobile_number%> <%= form.text_field :mobile_number%><br><br>
+	  <%= form.label :experience%> <%= form.text_field :experience%><br><br>
+	  <%= form.label :number_of_movies%> <%= form.text_field :number_of_movies%><br><br>
+	  <%= form.file_field :profile_image, accept: 'image/png, image/gif, image/jpeg, image/jpg'%>
+    <% @cast.errors.full_messages_for(:profile_image).each do |message| %>
+    <%= message %>
+    <% end %><br><br>
+	</div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

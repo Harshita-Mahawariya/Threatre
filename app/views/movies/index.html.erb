@@ -1,0 +1,24 @@
+<h1>Movie</h1>
+<table>
+	<tr><th>S.no</th>
+	<th> </th>
+	<th>Name</th>
+	<th> </th>
+	<th>View</th>
+	<th> </th>
+	<th>Delete</th></tr>
+	<%@movies.each do |m|%>
+		<tr><td><%= m.id%></td>
+			<td> </td>
+			<td><%= m.name%></td>
+			<td> </td>
+			<td><%= link_to 'View', movie_path(m.id)%></td>
+			<td> </td>
+			<td><%= link_to 'Delete' , movie_path(m.id), method: :delete %></td></tr>
+	<%end%>
+</table>
+<br>
+<%= link_to 'Create Movie', new_movie_path%><br><br>
+<%= link_to 'View Cast Index', casts_path%><br><br>
+<%= link_to 'Add Cast to Movie', new_movies_with_cast_path%><br><br>
+<%= link_to 'View Production House', production_companies_path%>

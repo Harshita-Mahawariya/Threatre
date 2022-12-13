@@ -1,0 +1,11 @@
+<br><br>
+<h1>Add Cast To Movie</h1>
+<%= form_with model: @movieswithcasts, method: :post do |form| %>
+	<div>
+	  <%= form.select :movie_id,options_for_select(Movie.all.map{|b| [b.name, b.id]}) %><br><br>
+	  <%= form.select :cast_id,options_for_select(Cast.all.map{|b| [b.name, b.id]}) %><br><br>
+	</div>
+	<div>
+    <%= form.submit %>
+  </div>
+<%end%>

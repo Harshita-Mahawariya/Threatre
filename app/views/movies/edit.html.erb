@@ -1,0 +1,16 @@
+<h1>Create</h1>
+<%= form_with model: @movie, method: :put do |form| %>
+	<div>
+	  <%= form.select :production_company_id,options_for_select(ProductionCompany.all.map{|b| [b.name, b.id]}) %><br><br>
+	  <%= form.label :Name%> <%= form.text_field :name%><br><br>
+	  <%= form.label :budget%> <%= form.text_field :budget%><br><br>
+	  <%= form.label :duration%> <%= form.text_field :duration%><br><br>
+	  <%= form.file_field :poster, accept: 'image/png, image/gif, image/jpeg, image/jpg'%>
+        <% @movie.errors.full_messages_for(:poster).each do |message| %>
+        <%= message %>
+        <% end %><br><br>
+	</div>
+  <div>
+    <%= form.submit%>
+  </div>
+<% end %>

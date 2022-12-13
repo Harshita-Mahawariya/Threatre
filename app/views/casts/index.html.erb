@@ -1,0 +1,12 @@
+<h1>Cast</h1>
+<table>
+	<tr><th>S.no</th>
+	<th>Name</th>
+	<th>View</th>
+	<th>Delete</th></tr>
+	<%@casts.each do |c|%>
+			<tr><td><%= c.id%></td> <td><%= c.name%></td> <td><%= link_to 'View', cast_path(c.id)%></td><td><%= link_to 'Delete' , cast_path(c.id), method: :delete %></td> </tr>
+	<%end%>
+</table>
+<br>
+<%= link_to 'Create Cast', new_cast_path%><br><br>
